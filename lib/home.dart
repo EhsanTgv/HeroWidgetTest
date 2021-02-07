@@ -8,10 +8,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(),
+      appBar: AppBar(
+        title: Text("First Page"),
+      ),
+      body: Hero(
+        tag: "DemoTag",
+        child: Icon(
+          Icons.add,
+          size: 70.0,
+        ),
+      ),
     );
   }
 }
