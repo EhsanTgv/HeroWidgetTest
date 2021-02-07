@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hero_widget/second.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -12,12 +13,24 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("First Page"),
       ),
-      body: Hero(
-        tag: "DemoTag",
-        child: Icon(
-          Icons.add,
-          size: 70.0,
-        ),
+      body: Column(
+        children: [
+          RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondPage()),
+                );
+              },
+              child: Text("Next Page")),
+          Hero(
+            tag: "DemoTag",
+            child: Icon(
+              Icons.add,
+              size: 70.0,
+            ),
+          ),
+        ],
       ),
     );
   }
